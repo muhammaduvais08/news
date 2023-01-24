@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <style>
+            .header{
+                border-bottom: 1px red solid;
+                display: flex;
+                flex-direction:row;
+            }
+            .header > .logo{
+                border-bottom: 1px red solid;
+            }
+            .header > .menu{
+               
+            }
+            .header > .menu > ul{
+                float: float;
+            }
+            .header > .menu > ul > li {
+                
+                list-style: none;
+                float: left;
+                padding: 5px;
+            }
+            .main_container{
+                min-height: 200px;
+            }
+        </style>
+        <title>{% block title_block %}India News - Home Page{% endblock %}</title>
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo"> New Logo</div>
+            <div class="menu">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'news' %}">News</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>   
+            </div>
+        </div>
+        <div class="main_container">
+            {% block main_body_block %}{% endblock %}
+            {% comment %} DTL {% endcomment %}
+        </div>
+        <div class="footer">
+            Fotter Will come here
+        </div>
+    </body>         
+</html>
